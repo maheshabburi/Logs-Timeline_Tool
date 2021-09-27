@@ -52,6 +52,7 @@ for id in ecid_list:
               arr[i] = arr[j]    
               arr[j] = temp
 
+# grouping microservices into one block indexed in numbers like 1,2,3,...
 log_list_final = {}
 for id in ecid_list:
   arr = log_list[id]
