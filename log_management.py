@@ -33,6 +33,7 @@ def make_the_log_list(log_file_path, microservice_name):
 log_list = {}
 ecid_list = []
 
+#set the path to these files appropriately
 make_the_log_list("/Users/maheshabburi/Documents/Logs-tool/odalogs/bots-management-apis-7c6b67f97f-dvqxc.log","bots-management")
 make_the_log_list("/Users/maheshabburi/Documents/Logs-tool/odalogs/bots-management-apis-7c6b67f97f-lpvkj.log","bots-management")
 make_the_log_list("/Users/maheshabburi/Documents/Logs-tool/odalogs/bots-connectors-5f6f4f697f-9jscx.log","bots-connectors")
@@ -69,10 +70,11 @@ for id in ecid_list:
 from flask import Flask, request, redirect, url_for, render_template
 from werkzeug.utils import secure_filename
 
+# set the content folder appropriately such that logs.html is contained in it
 app = Flask(__name__,template_folder="/Users/maheshabburi/Desktop")
 
 @app.route('/', methods=['GET'])
 def main_page():
-  return render_template('logs-htmlV1.html', log_list=log_list_final)
+  return render_template('logs.html', log_list=log_list_final)
 
 app.run()
